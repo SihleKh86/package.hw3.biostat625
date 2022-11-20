@@ -1,3 +1,18 @@
+#'multiple regression function
+#'
+#'Estimates the regression, standard errors, t-values and R-square
+#'
+#'@param M argument is input matrix or dataset
+#'@param outcome argument is the outcome/response variable as a column of the input Matrix
+#'@param excl_Pred arugment is the column or predictors you want to exclude,
+#'put zero if you are using all predictors of the Matrix/Dataset
+#'
+#'@return the Beta estimates and other regression metric similar to the R lm function
+#'
+#'@example
+#'Beta(matrix(c(1:6,2,3)),2,0)
+
+
 Beta_coef=function(M,outcome,excl_Pred){
   n<-nrow(M)
   m<-ncol(M)
