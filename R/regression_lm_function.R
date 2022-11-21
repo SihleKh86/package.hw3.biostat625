@@ -16,8 +16,6 @@
 #'
 
 
-
-
 Beta_coef=function(M,outcome,excl_Pred){
   n<-nrow(M)
   m<-ncol(M)
