@@ -22,7 +22,7 @@ Beta_coef=function(M,outcome,excl_Pred){
 
   Y<-matrix(M[,outcome], nrow = nrow(M))
 
-  if (excl_Pred == 0){
+  ifelse (excl_Pred == 0){
     X<-cbind(1, as.matrix(x=M[,-outcome]))
   } else{
     X<-cbind(1, as.matrix(x=M[,-predictors]))

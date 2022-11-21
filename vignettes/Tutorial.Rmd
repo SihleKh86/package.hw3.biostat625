@@ -17,3 +17,23 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(mypackage.hw3)
 ```
+
+Demo how to use the regression function`Beta_coef`
+```{r}
+#Demo using swiss dataset found in R
+head(swiss)
+M<-swiss
+
+```
+
+Demo when using all the predictors of the dataset/Matrix (i.e excl_Pred is 0)
+```{r}
+#We are Choosing Fertility (column 1) as the response variable
+Beta_coef(M,1,0)
+```
+
+Demo when using some predictors of the dataset/Matrix (i.e excl_Pred is not equal 0)
+```{r}
+#Choosing Fertility (column 1) as the response variable 
+Beta_coef(M,1,c(3,5))
+```
