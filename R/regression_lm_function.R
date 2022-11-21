@@ -11,6 +11,11 @@
 #'
 #'@examples
 #'Beta_coef(matrix(rnorm(50,2,1),10,5,dimnames= list(c(1:10),c("a","b","c","d","e"))),2,0)
+#'
+#'@export
+#'
+
+
 
 
 Beta_coef=function(M,outcome,excl_Pred){
