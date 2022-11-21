@@ -29,7 +29,8 @@ M<-swiss
 Demo when using all the predictors of the dataset/Matrix (i.e excl_Pred is 0)
 ```{r}
 #We are Choosing Fertility (column 1) as the response variable
-Beta_coef(M,1,0)
+mod1<-Beta_coef(M,1,0)
+mod1
 ```
 
 Demo when using some predictors of the dataset/Matrix (i.e excl_Pred is not equal 0)
@@ -37,3 +38,38 @@ Demo when using some predictors of the dataset/Matrix (i.e excl_Pred is not equa
 #Choosing Fertility (column 1) as the response variable 
 Beta_coef(M,1,c(3,5))
 ```
+
+using the R lm function 
+```{r}
+mod2<-lm(Fertility~.,swiss)
+summary(mod2)
+```
+
+Checking accuracy between R lm function the regression function (Beta_coef)
+```{r}
+#extracting Beta coefficients from model2 (R lm function)
+coef_mod2<-coef(mod2)[1:6]
+coef2_mod2<-as.vector(coef_mod2)
+
+#extracting Beta coefficients from model1
+coef1<-mod1[2] #Beta estimates in column 2
+coef1
+coef2<-as.data.frame(coef1) #converting to a dataframe
+coef2
+coef3<-coef2[1]#extracting the Beta estimates (column 1)
+coef4<-as.numeric(as.vector(unlist(coef3)))
+
+#Accuracy of the Beta estimates from the two models
+all.equal(coef2_mod2[1],coef4[1])
+all.equal(coef2_mod2,coef4)
+```
+
+Benchmark
+```{r}
+system.time(Beta_coef(M,1,0))
+system.time(lm(Fertility~.,swiss))
+
+bench::mark(Beta_coef(M,1,0),lm(Fertility~.,swiss))
+```
+
+*R lm function is much faster 
