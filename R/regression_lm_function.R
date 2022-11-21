@@ -9,8 +9,8 @@
 #'
 #'@return the Beta estimates and other regression metric similar to the R lm function
 #'
-#'@example
-#'Beta(matrix(c(1:6,2,3)),2,0)
+#'@examples
+#'Beta_coef(matrix(rnorm(50,2,1),10,5,dimnames= list(c(1:10),c("a","b","c","d","e"))),2,0)
 
 
 Beta_coef=function(M,outcome,excl_Pred){
