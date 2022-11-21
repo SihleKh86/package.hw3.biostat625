@@ -22,11 +22,10 @@ Beta_coef=function(M,outcome,excl_Pred){
 
   Y<-matrix(M[,outcome], nrow = nrow(M))
 
-  ifelse (excl_Pred == 0){
-    X<-cbind(1, as.matrix(x=M[,-outcome]))
-  } else{
-    X<-cbind(1, as.matrix(x=M[,-predictors]))
-  }
+
+  ifelse(excl_Pred == 0, X<-cbind(1, as.matrix(x=M[,-outcome])),
+  ifelse(excl_Pred > 1, X<-cbind(1, as.matrix(x=M[,-excl_Pred]))))
+
   colnames(X)[1]<-"(Intercept)"
 
   p<-ncol(X)-1 # number of predictors excluding intercept
