@@ -78,7 +78,7 @@ Beta_coef=function(M,outcome,excl_Pred){
   p_value_F_Stat <- pf(F_stat,df1 = p, df2 = n-p-1, lower.tail = FALSE)
 
   #concatenate and print residual standard error, multiple R-Squared, Adj R-Squared and F Statistics
-  resultc<-cat("Residual standard error: ", round(residual_std_error, digits=3),
+  resultc<-paste("Residual standard error: ", round(residual_std_error, digits=3),
                "on", n-p-1, "degrees of freedom",
                "\nMultiple R-squared: ", R_sq,"Adjusted R-Squared: ", R_sq_adj,
                "\nF-statistic: ", F_stat, "on ", p, "and",n-p-1,
