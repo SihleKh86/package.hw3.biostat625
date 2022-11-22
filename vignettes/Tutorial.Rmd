@@ -67,10 +67,8 @@ all.equal(coef2_mod2,coef4)
 
 Benchmark
 ```{r}
-system.time(Beta_coef(M,1,0))
-system.time(lm(Fertility~.,swiss))
 
-bench::mark(as.numeric(Beta_coef(M,1,0)[[2]][,1]),as.vector(lm(Fertility~.,swiss)[1]$coefficients))
+bench::mark(as.numeric(Beta_coef(M,1,0)[[2]][,1]),as.numeric(lm(Fertility~.,swiss)[1]$coefficients))
 ```
 
 *R lm function is much faster 
