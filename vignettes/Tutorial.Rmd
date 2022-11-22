@@ -68,7 +68,7 @@ all.equal(coef2_mod2,coef4)
 Benchmark
 ```{r}
 
-bench::mark(as.numeric(Beta_coef(M,1,0)[[2]][,1]),as.numeric(lm(Fertility~.,swiss)[1]$coefficients))
+bench::mark(as.vector(as.numeric(Beta_coef(M,1,0)[[2]][[1]])),as.numeric(lm(Fertility~.,swiss)[1]$coefficients))
 
 ```
 
