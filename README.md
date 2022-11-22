@@ -6,6 +6,8 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/SihleKh86/package.hw3.biostat625/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/SihleKh86/package.hw3.biostat625/actions/workflows/R-CMD-check.yaml)
+[![Codecov test
+coverage](https://codecov.io/gh/SihleKh86/package.hw3.biostat625/branch/main/graph/badge.svg)](https://app.codecov.io/gh/SihleKh86/package.hw3.biostat625?branch=main)
 <!-- badges: end -->
 
 The goal of mypackage.hw3 is to fit a regression model and estimate
