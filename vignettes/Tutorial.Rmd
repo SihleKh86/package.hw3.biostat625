@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(mypackage.hw3)
+library(bench)
 ```
 
 Demo how to use the regression function`Beta_coef`
@@ -69,7 +70,7 @@ Benchmark
 system.time(Beta_coef(M,1,0))
 system.time(lm(Fertility~.,swiss))
 
-#bench::mark(as.numeric(Beta_coef(M,1,0)[[2]][,1]),as.vector(lm(Fertility~.,swiss)[1]$coefficients))
+bench::mark(as.numeric(Beta_coef(M,1,0)[[2]][,1]),as.vector(lm(Fertility~.,swiss)[1]$coefficients))
 ```
 
 *R lm function is much faster 
