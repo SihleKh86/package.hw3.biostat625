@@ -70,4 +70,4 @@ Benchmark
 bench::mark(as.numeric(Beta_coef(M,1,0)[[2]][,1]),as.vector(lm(Fertility~.,swiss)[1]$coefficients))
 ```
 
-*R lm function is much faster 
+
